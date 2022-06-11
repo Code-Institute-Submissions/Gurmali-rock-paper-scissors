@@ -4,6 +4,17 @@ import random
 def game():
     player = input("Make a choice:\n rock, paper or scissors?\n")
     print(f"You chose {player}\n")
+
+    if player == "rock":
+        pass
+    elif player == "paper":
+        pass
+    elif player == "scissors":
+        pass
+    else:
+        print(f"{player} is not an option. Try again!\n")
+        print(game())
+
     ai = random.choice(['rock', 'paper', 'scissors'])
     print(f"Computer chose {ai}\n")
 
