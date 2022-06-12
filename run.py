@@ -1,27 +1,8 @@
 import random
-import gspread
-from google.oauth2.service_account import Credentials
-
-
-SCOPE = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive.file",
-    "https://www.googleapis.com/auth/drive"
-    ]
-
-CREDS = Credentials.from_service_account_file('creds.json')
-SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('played')
-
-Blad1 = SHEET.worksheet('Blad1')
-
-data = Blad1.get_all_values()
-
-print(data)
 
 
 def game():
+
     player = input("Make a choice:\n rock, paper or scissors?\n")
     print(f"You chose {player}\n")
 
@@ -45,13 +26,12 @@ def game():
         return "You win! :)\n"
     else:
         return "Computer won :(\n"
-    
+
 
 def replay():
     play_again = input("Do you want to play again?  y/n\n")
 
     if play_again == "y":
-        print(data)
         print(game())
         replay()
     elif play_again == "n":
