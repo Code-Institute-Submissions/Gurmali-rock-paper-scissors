@@ -1,63 +1,77 @@
 import random
 
 
+USER_CHOICES = """
+Make a choice:
+  * rock
+  * paper
+  * scissors:
+"""
+
+
 def game():
     """
-    Function for game mechanics.
+    Implements he main game functionality.
+        1. Accepts user choice
+        2. Generate random choice for computer
+        3. Check if it is a tie or user won the game.
     """
-    player = input("Make a choice:\n rock, paper or scissors?\n\n")
-    print(f"\nYou chose {player}.\n")
+    player_input = input(USER_CHOICES).lower()
+    print(f"\nYou chose {player_input}.\n")
 
-    if player == "rock":
+    if player_input == "rock":
         pass
-    elif player == "paper":
+    elif player_input == "paper":
         pass
-    elif player == "scissors":
+    elif player_input == "scissors":
         pass
     else:
-        print(f"{player} is not an option. Try again!\n\n")
+        print(f"{player_input} is not an option. Try again!\n\n")
         print(game())
 
-    ai = random.choice(['rock', 'paper', 'scissors'])
-    print(f"Computer chose {ai}.\n")
+    ai_input = random.choice(["rock", "paper", "scissors"])
+    print(f"Computer chose {ai_input}.\n")
 
-    if player == ai:
+    if player_input == ai_input:
         return "Its a tie.\n"
-    if winner(player, ai):
-        return f"{player} beats {ai}.\n" "\nYou win! :)\n"
+    if winner(player_input, ai_input):
+        return f"{player_input} beats {ai_input}.\n" "\nYou win! :)\n"
     else:
-        return f"{ai} beats {player}.\n" "\nComputer won :(\n"
+        return f"{ai_input} beats {player_input}.\n" "\nComputer won :(\n"
 
 
-def replay():
+def replay_game():
     """
-    Function for Restarting the game.
+    Prompts the user to restart the game.
     """
     play_again = input("Do you want to play again?  y/n\n\n")
 
     if play_again == "y":
         print(game())
-        replay()
+        replay_game()
     elif play_again == "n":
         None
     else:
         print(f"{play_again} is not an option, try again!\n")
-        replay()
+        replay_game()
 
 
 def winner(user, computer):
     """
     Function for determining who Won the game.
     """
-    if (user == 'rock' and computer == 'scissors' or
-        user == 'scissors' and computer == 'paper') \
-            or (user == 'paper' and computer == 'rock'):
+    if (
+        user == "rock"
+        and computer == "scissors"
+        or user == "scissors"
+        and computer == "paper"
+    ) or (user == "paper" and computer == "rock"):
         return True
 
 
 def main():
     print(game())
-    print(replay())
+    print(replay_game())
 
 
 (main())
