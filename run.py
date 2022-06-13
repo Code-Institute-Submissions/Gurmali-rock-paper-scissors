@@ -5,8 +5,8 @@ def game():
     """
     Function for game mechanics.
     """
-    player = input("Make a choice:\n rock, paper or scissors?\n")
-    print(f"You chose {player}\n")
+    player = input("Make a choice:\n rock, paper or scissors?\n\n")
+    print(f"\nYou chose {player}.\n")
 
     if player == "rock":
         pass
@@ -15,26 +15,25 @@ def game():
     elif player == "scissors":
         pass
     else:
-        print(f"{player} is not an option. Try again!\n")
+        print(f"{player} is not an option. Try again!\n\n")
         print(game())
 
     ai = random.choice(['rock', 'paper', 'scissors'])
-    print(f"Computer chose {ai}\n")
+    print(f"Computer chose {ai}.\n")
 
     if player == ai:
         return "Its a tie.\n"
-    
     if winner(player, ai):
-        return "You win! :)\n"
+        return f"{player} beats {ai}.\n" "\nYou win! :)\n"
     else:
-        return "Computer won :(\n"
+        return f"{ai} beats {player}.\n" "\nComputer won :(\n"
 
 
 def replay():
     """
     Function for Restarting the game.
     """
-    play_again = input("Do you want to play again?  y/n\n")
+    play_again = input("Do you want to play again?  y/n\n\n")
 
     if play_again == "y":
         print(game())
