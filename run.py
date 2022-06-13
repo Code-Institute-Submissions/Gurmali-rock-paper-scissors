@@ -2,7 +2,9 @@ import random
 
 
 def game():
-
+    """
+    Function for game mechanics.
+    """
     player = input("Make a choice:\n rock, paper or scissors?\n")
     print(f"You chose {player}\n")
 
@@ -29,6 +31,9 @@ def game():
 
 
 def replay():
+    """
+    Function for Restarting the game.
+    """
     play_again = input("Do you want to play again?  y/n\n")
 
     if play_again == "y":
@@ -42,11 +47,18 @@ def replay():
 
 
 def winner(user, computer):
+    """
+    Function for determining who Won the game.
+    """
     if (user == 'rock' and computer == 'scissors' or
         user == 'scissors' and computer == 'paper') \
             or (user == 'paper' and computer == 'rock'):
         return True
 
 
-print(game())
-print(replay())
+def main():
+    print(game())
+    print(replay())
+
+
+(main())
