@@ -1,31 +1,60 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Rock Paper scissors
 
-Welcome Gurmali,
+Rock paper scissors is a game originating from china. It's is usualy played by hand between two people.
+Rock smashes scissors, scissors cuts paper and paper covers rock.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+It's a simple game any two people can play.
+And if you dont have a friend to play with, this Program allows you to play against a cumputer.
 
-## Reminders
+[This is a link to the live version of my project](https://rock-paper-scissors-gurmali.herokuapp.com/)
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+<img src="assets/images/responsive.jpg">
 
-## Creating the Heroku app
+## Features
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+The main feature is a working game that runs on an Heroku mock terminal.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+### Features left to implement
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+ - A scoreboard for keeping track of how many times the user and the computer has won. Or as an alternative, showing the percentages of wins and losses.
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+## Game play
 
-Connect your GitHub repository and deploy as normal.
+- The game starts by telling you to choose a hand.
+- Rock, Paper or Scissors
 
-## Constraints
+<img src="assets/images/game-start.jpg">
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+- Lets say you chose Rock.
+- The application tells the user the option they chose.
 
------
-Happy coding!
+<img src="assets/images/the-choice.jpg">
+
+- Randomly selects and option for the computer.
+- Tells the user what option the computer has chosen.
+
+<img src="assets/images/computer-choice.jpg">
+
+- Specifies which of the two options beats the other.
+
+<img src="assets/images/beating.jpg">
+
+- And Tells the user who won.
+
+<img src="assets/images/winner.jpg">
+
+- Finaly asking the user if they want to play again.
+
+<img src="assets/images/in-game.jpg">
+
+- Would the user want to play again, the game restarts.
+
+### User errors
+
+- If the user tries to choose anything other than the three options provided, they get an error message prompting them to try again.
+
+<img src="assets/images/wrong-choice.jpg">
+
+- Similarly if the user does not write y or n(upper or lower case, doesn't matter) when asked if they want to play again, the user gets an error message asking them to try again.
+
+<img src="assets/images/try-again.jpg">

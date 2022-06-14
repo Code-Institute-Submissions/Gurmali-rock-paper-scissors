@@ -9,9 +9,12 @@ Make a choice:
 """
 
 
+YES_OR_NO = "Do you want to play again?  y/n\n"
+
+
 def game():
     """
-    Implements he main game functionality.
+    Implements the main game functionality.
         1. Accepts user choice
         2. Generate random choice for computer
         3. Check if it is a tie or user won the game.
@@ -34,7 +37,7 @@ def game():
 
     if player_input == ai_input:
         return "Its a tie.\n"
-    if winner(player_input, ai_input):
+    if winner_is(player_input, ai_input):
         return f"{player_input} beats {ai_input}.\n" "\nYou win! :)\n"
     else:
         return f"{ai_input} beats {player_input}.\n" "\nComputer won :(\n"
@@ -44,7 +47,7 @@ def replay_game():
     """
     Prompts the user to restart the game.
     """
-    play_again = input("Do you want to play again?  y/n\n\n")
+    play_again = input(YES_OR_NO).lower()
 
     if play_again == "y":
         print(game())
@@ -56,7 +59,7 @@ def replay_game():
         replay_game()
 
 
-def winner(user, computer):
+def winner_is(user, computer):
     """
     Function for determining who Won the game.
     """
@@ -74,4 +77,5 @@ def main():
     print(replay_game())
 
 
-(main())
+if __name__ == "__main__":
+    (main())
