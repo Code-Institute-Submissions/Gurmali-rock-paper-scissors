@@ -1,10 +1,8 @@
 # Rock Paper scissors
 
-Rock paper scissors is a game originating from china. It's is usualy played by hand between two people.
-Rock smashes scissors, scissors cuts paper and paper covers rock.
+Rock paper scissors is a game originating from China. It's is usually played by hand between two people. Rock smashes scissors, scissors cuts paper and paper covers rock.
 
-It's a simple game any two people can play.
-And if you dont have a friend to play with, this Program allows you to play against a cumputer.
+It's a simple game any two people can play. And if you don't have a friend to play with, this Program allows you to play against a computer.
 
 [This is a link to the live version of my project](https://rock-paper-scissors-gurmali.herokuapp.com/)
 
